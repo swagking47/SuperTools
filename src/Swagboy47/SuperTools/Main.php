@@ -5,6 +5,7 @@ namespace Swagboy47\SuperTools;
 use pocketmine\command\Command;
 use pocketmine\player;
 use pocketmine\command\CommandSender;
+use pocketmine\item\Item;
 use pocketmine\event\Listener;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
@@ -63,8 +64,22 @@ $this->getServer()->getPluginManager()->registerEvents($this, $this);
       $player = $event->getPlayer();
       $item = $event->getItem();
       $block = $event->getBlock()->getID()
-      $helmet =  $player->getInventory()->getHelmet->getID;
-    if($helmet == 298 and $tem->getID() == 298){
+      $helmet =  $player->getInventory()->getHelmet->getID();
+      $drops = $block->getDrops($item);
+    if($helmet == 298 and $item->isPickaxe){
+    	$block1 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block3 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $entity->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	$block2 = $block->getLevel()->getBlockIdAt($block->x +1, $block->y, $block->z);
+    	if($block1 = $block){
+    		$block->getLevel()->setBlockIdAt($block1->x, $block1->y, $block1->z, 0);
+    		$block->getLevel()->dropItem($block1->x, $block1->y, $block1->z, $drops);
+    		
+    	}
       
       
     }
